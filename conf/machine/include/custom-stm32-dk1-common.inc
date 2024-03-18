@@ -42,14 +42,10 @@ PREFERRED_VERSION_u-boot-mainline-tools-native ?= "2024.01%"
 # Linux kernel
 KERNEL_IMAGETYPE = "fitImage"
 KERNEL_CLASSES += " kernel-fitimage "
-KERNEL_MODULES_AUTOLOAD += " etnaviv "
 
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-stable"
-PREFERRED_VERSION_linux-stable ?= "6.1%"
+PREFERRED_VERSION_linux-stable ?= "6.6%"
 KERNEL_DTC_FLAGS += "-@"
-
-# WPE (from meta-webkit)
-PREFERRED_RPROVIDER_virtual/wpebackend ?= "wpebackend-fdo"
 
 # Ship kernel modules
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " kernel-modules kernel-devicetree u-boot-default-env "

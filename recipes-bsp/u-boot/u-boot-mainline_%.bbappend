@@ -12,9 +12,3 @@ SRC_URI:append:custom-stm32-dk1 = " \
 	file://default-device-tree.cfg \
 	"
 
-# U-Boot release extra version, used as identifier of a patch
-# release. Update this every time this recipe is updated. The
-# format is -${MACHINE}-date.extraversion. The date is in the
-# format YYYYMMDD, the extraversion is used in case there are
-# multiple releases during a single day, which is unlikely.
-UBOOT_LOCALVERSION:custom-stm32-dk1 ?= "-${MACHINE}-20240318.01"
