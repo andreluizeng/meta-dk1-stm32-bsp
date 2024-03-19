@@ -12,5 +12,7 @@ SRC_URI:append:custom-stm32-dk1 = " \
 	file://default-device-tree.cfg \
 	file://0001-UBOOT-sdmmc1-change-detected-pin.patch \
 	file://0002-UBOOT-added-sdmmc2-support.patch \
+	file://0003-UBOOT-added-cmd-gpt.patch \
+	file://0004-UBOOT-set-sdmmc2-4bit-bus-width.patch \
 	"
 
