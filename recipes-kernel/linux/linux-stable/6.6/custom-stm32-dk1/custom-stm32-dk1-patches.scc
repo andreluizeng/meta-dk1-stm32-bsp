@@ -1,2 +1,2 @@
 patch 0001-KERNEL-sdmmc1-change-detected-pin.patch
-patch 0002-KERNEL-removed-ltdc-conflict-with-sdmmc2.patch
+patch 0002-KERNEL-added-sdmmc2-support.patch

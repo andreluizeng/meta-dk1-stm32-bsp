@@ -1,0 +1,73 @@
+diff --git a/arch/arm/boot/dts/st/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/st/stm32mp15-pinctrl.dtsi
+index 098153ee99a3..d85b2db2f238 100644
+--- a/arch/arm/boot/dts/st/stm32mp15-pinctrl.dtsi
++++ b/arch/arm/boot/dts/st/stm32mp15-pinctrl.dtsi
+@@ -1796,8 +1796,8 @@ pins {
+ 
+ 	sdmmc2_b4_pins_a: sdmmc2-b4-0 {
+ 		pins1 {
+-			pinmux = <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
+-				 <STM32_PINMUX('B', 15, AF9)>, /* SDMMC2_D1 */
++			pinmux = <STM32_PINMUX('E', 6, AF7)>, /* SDMMC2_D0 */
++				 <STM32_PINMUX('B', 7, AF10)>, /* SDMMC2_D1 */
+ 				 <STM32_PINMUX('B', 3, AF9)>, /* SDMMC2_D2 */
+ 				 <STM32_PINMUX('B', 4, AF9)>, /* SDMMC2_D3 */
+ 				 <STM32_PINMUX('G', 6, AF10)>; /* SDMMC2_CMD */
+@@ -1815,8 +1815,8 @@ pins2 {
+ 
+ 	sdmmc2_b4_od_pins_a: sdmmc2-b4-od-0 {
+ 		pins1 {
+-			pinmux = <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
+-				 <STM32_PINMUX('B', 15, AF9)>, /* SDMMC2_D1 */
++			pinmux = <STM32_PINMUX('E', 6, AF7)>, /* SDMMC2_D0 */
++				 <STM32_PINMUX('B', 7, AF10)>, /* SDMMC2_D1 */
+ 				 <STM32_PINMUX('B', 3, AF9)>, /* SDMMC2_D2 */
+ 				 <STM32_PINMUX('B', 4, AF9)>; /* SDMMC2_D3 */
+ 			slew-rate = <1>;
+@@ -1839,8 +1839,8 @@ pins3 {
+ 
+ 	sdmmc2_b4_sleep_pins_a: sdmmc2-b4-sleep-0 {
+ 		pins {
+-			pinmux = <STM32_PINMUX('B', 14, ANALOG)>, /* SDMMC2_D0 */
+-				 <STM32_PINMUX('B', 15, ANALOG)>, /* SDMMC2_D1 */
++			pinmux = <STM32_PINMUX('E', 6, ANALOG)>, /* SDMMC2_D0 */
++				 <STM32_PINMUX('B', 7, ANALOG)>, /* SDMMC2_D1 */
+ 				 <STM32_PINMUX('B', 3, ANALOG)>, /* SDMMC2_D2 */
+ 				 <STM32_PINMUX('B', 4, ANALOG)>, /* SDMMC2_D3 */
+ 				 <STM32_PINMUX('E', 3, ANALOG)>, /* SDMMC2_CK */
+diff --git a/arch/arm/boot/dts/st/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/st/stm32mp15xx-dkx.dtsi
+index 83f6eac584bf..84a0757a40f3 100644
+--- a/arch/arm/boot/dts/st/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/boot/dts/st/stm32mp15xx-dkx.dtsi
+@@ -465,7 +465,7 @@ &ltdc {
+ 	pinctrl-names = "default", "sleep";
+ 	pinctrl-0 = <&ltdc_pins_a>;
+ 	pinctrl-1 = <&ltdc_sleep_pins_a>;
+-	status = "okay";
++	status = "disabled";
+ 
+ 	port {
+ 		ltdc_ep0_out: endpoint {
+@@ -553,6 +553,22 @@ &sdmmc1 {
+ 	status = "okay";
+ };
+ 
++&sdmmc2 {
++	pinctrl-names = "default", "opendrain", "sleep";
++	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_a>;
++	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_a>;
++	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_a>;
++	non-removable;
++	no-sd;
++	no-sdio;
++	st,neg-edge;
++	bus-width = <8>;
++	vmmc-supply = <&v3v3>;
++	vqmmc-supply = <&vdd>;
++	mmc-ddr-3_3v;
++	status = "okay";
++};
++
+ &sdmmc3 {
+ 	pinctrl-names = "default", "opendrain", "sleep";
+ 	pinctrl-0 = <&sdmmc3_b4_pins_a>;
