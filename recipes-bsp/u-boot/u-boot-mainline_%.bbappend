@@ -10,5 +10,6 @@ SRC_URI:append:custom-stm32-dk1 = " \
 	file://boot.cmd \
 	file://fw_env.config \
 	file://default-device-tree.cfg \
+	file://0001-UBOOT-sdmmc1-change-detected-pin.patch \
 	"
 

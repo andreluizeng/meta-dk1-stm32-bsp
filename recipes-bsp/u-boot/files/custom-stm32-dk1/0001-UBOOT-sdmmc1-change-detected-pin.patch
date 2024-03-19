@@ -1,0 +1,13 @@
+diff --git a/arch/arm/dts/stm32mp15xx-dkx.dtsi b/arch/arm/dts/stm32mp15xx-dkx.dtsi
+index 511113f2e3..83f6eac584 100644
+--- a/arch/arm/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/dts/stm32mp15xx-dkx.dtsi
+@@ -545,7 +545,7 @@
+ 	pinctrl-0 = <&sdmmc1_b4_pins_a>;
+ 	pinctrl-1 = <&sdmmc1_b4_od_pins_a>;
+ 	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a>;
+-	cd-gpios = <&gpiob 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
++	cd-gpios = <&gpiob 8 (GPIO_ACTIVE_LOW | GPIO_PULL_DOWN)>;
+ 	disable-wp;
+ 	st,neg-edge;
+ 	bus-width = <4>;

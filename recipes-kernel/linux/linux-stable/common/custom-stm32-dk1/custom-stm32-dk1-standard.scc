@@ -5,4 +5,4 @@ branch custom-stm32-dk1
 kconf hardware custom-stm32-dk1.cfg
 kconf non-hardware custom-stm32-dk1-non_hardware.cfg
 
-# include dh-stm32mp1-dhsom-patches.scc
+include custom-stm32-dk1-patches.scc
