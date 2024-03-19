@@ -1,0 +1,13 @@
+diff --git a/arch/arm/dts/stm32mp15xx-dkx.dtsi b/arch/arm/dts/stm32mp15xx-dkx.dtsi
+index 83f6eac584..53ec51f2d7 100644
+--- a/arch/arm/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/dts/stm32mp15xx-dkx.dtsi
+@@ -465,7 +465,7 @@
+ 	pinctrl-names = "default", "sleep";
+ 	pinctrl-0 = <&ltdc_pins_a>;
+ 	pinctrl-1 = <&ltdc_sleep_pins_a>;
+-	status = "okay";
++	status = "disabled";
+ 
+ 	port {
+ 		ltdc_ep0_out: endpoint {
