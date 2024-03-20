@@ -2,4 +2,5 @@ patch 0001-KERNEL-sdmmc1-change-detected-pin.patch
 patch 0002-KERNEL-added-sdmmc2-support.patch
 patch 0003-KERNEL-set-sdmmc2-4bit-buswidth.patch
 patch 0004-KERNEL-fixed-sdmmc2-data-pins-for-8bit-mode.patch
+patch 0005-KERNEL-added-ethernet-power-enable-pins.patch
 

@@ -1,0 +1,46 @@
+diff --git a/arch/arm/dts/stm32mp15-pinctrl.dtsi b/arch/arm/dts/stm32mp15-pinctrl.dtsi
+index e942738486..10c95fe4e1 100644
+--- a/arch/arm/dts/stm32mp15-pinctrl.dtsi
++++ b/arch/arm/dts/stm32mp15-pinctrl.dtsi
+@@ -198,7 +198,7 @@
+ 				 <STM32_PINMUX('H', 7,  ANALOG)>;/* DCMI_D9 */
+ 		};
+ 	};
+-
++ 
+ 	ethernet0_rgmii_pins_a: rgmii-0 {
+ 		pins1 {
+ 			pinmux = <STM32_PINMUX('G', 5, AF11)>, /* ETH_RGMII_CLK125 */
+diff --git a/arch/arm/dts/stm32mp15xx-dkx.dtsi b/arch/arm/dts/stm32mp15xx-dkx.dtsi
+index bf57d62e85..1046485a62 100644
+--- a/arch/arm/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/dts/stm32mp15xx-dkx.dtsi
+@@ -144,14 +144,27 @@
+ 	status = "okay";
+ };
+ 
++&pinctrl
++{
++	ethernet0_power_enable_pins: power-enable-0 {
++    	    power_enable {
++    	        pinmux = <STM32_PINMUX('E', 5, GPIO_ACTIVE_HIGH)>; /* PE5 as GPIO, High */
++    	        output-high; // This ensures the pin starts in a high state
++    	        bias-disable;
++    	    };
++	};
++};
++
+ &ethernet0 {
+ 	status = "okay";
+-	pinctrl-0 = <&ethernet0_rgmii_pins_a>;
++	pinctrl-0 = <&ethernet0_rgmii_pins_a> , <&ethernet0_power_enable_pins>;
+ 	pinctrl-1 = <&ethernet0_rgmii_sleep_pins_a>;
+ 	pinctrl-names = "default", "sleep";
+ 	phy-mode = "rgmii-id";
+ 	max-speed = <1000>;
+ 	phy-handle = <&phy0>;
++//	nvmem-cells = <&ethernet_mac_address>;
++//	nvmem-cell-names = "mac-address";
+ 
+ 	mdio {
+ 		#address-cells = <1>;
