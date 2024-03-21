@@ -9,4 +9,3 @@ part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --part-name "
 
 bootloader --ptable gpt
 
-
