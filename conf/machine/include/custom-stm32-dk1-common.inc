@@ -8,7 +8,7 @@ ARM_INSTRUCTION_SET = "thumb"
 require conf/machine/include/${@'' if (d.getVar('LAYERSERIES_CORENAMES') in ["dunfell"]) else 'arm/armv7a/'}tune-cortexa7.inc
 require conf/machine/include/soc-family.inc
 
-MACHINE_FEATURES ?= "apm alsa ext2 keyboard screen serial touchscreen usbgadget usbhost"
+MACHINE_FEATURES ?= "apm ext2 keyboard screen serial usbhost"
 
 SERIAL_CONSOLE = "115200 ttySTM0"
 
@@ -55,7 +55,7 @@ IMAGE_FSTYPES ?= "tar.xz wic.xz wic.gz wic.bmap ext4.gz"
 INITRAMFS_FSTYPES ?= "cpio.xz"
 
 EXTRA_IMAGEDEPENDS += "virtual/bootloader"
-WKS_FILE = "sdimage-stm32mp1.wks"
+WKS_FILE ?= "sdimage-stm32mp1.wks"
 IMAGE_BOOT_FILES ?= "${KERNEL_IMAGETYPE}"
 IMAGE_INSTALL:append = " kernel-devicetree kernel-image-fitimage virtual/bootloader "
 do_image_wic[depends] += "mtools-native:do_populate_sysroot dosfstools-native:do_populate_sysroot virtual/bootloader:do_deploy"
