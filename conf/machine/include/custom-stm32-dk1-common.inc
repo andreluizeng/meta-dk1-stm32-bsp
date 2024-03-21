@@ -51,7 +51,7 @@ KERNEL_DTC_FLAGS += "-@"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += " kernel-modules kernel-devicetree u-boot-default-env "
 
 # List of images to be built
-IMAGE_FSTYPES ?= "tar.xz wic.xz wic.gz"
+IMAGE_FSTYPES ?= "tar.xz wic.xz wic.gz wic.bmap ext4.gz"
 INITRAMFS_FSTYPES ?= "cpio.xz"
 
 EXTRA_IMAGEDEPENDS += "virtual/bootloader"
