@@ -1,0 +1,25 @@
+diff --git a/arch/arm/dts/stm32mp157a-dk1-u-boot.dtsi b/arch/arm/dts/stm32mp157a-dk1-u-boot.dtsi
+index 2623cebf21..ed6bce9648 100644
+--- a/arch/arm/dts/stm32mp157a-dk1-u-boot.dtsi
++++ b/arch/arm/dts/stm32mp157a-dk1-u-boot.dtsi
+@@ -187,6 +187,20 @@
+ 	};
+ };
+ 
++&sdmmc2 {
++	bootph-pre-ram;
++};
++
++&sdmmc2_b4_pins_a {
++	bootph-pre-ram;
++	pins1 {
++		bootph-pre-ram;
++	};
++	pins2 {
++		bootph-pre-ram;
++	};
++};
++
+ &uart4 {
+ 	bootph-all;
+ };

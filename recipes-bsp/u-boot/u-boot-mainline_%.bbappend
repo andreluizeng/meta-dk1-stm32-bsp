@@ -16,5 +16,6 @@ SRC_URI:append:custom-stm32-dk1 = " \
 	file://0004-UBOOT-set-sdmmc2-4bit-bus-width.patch \
 	file://0005-UBOOT-fixed-sdmmc2-data-pins-for-8bit-mode.patch \
 	file://0006-UBOOT-added-ethernet-power-enable-pins.patch \
+	file://0007-UBOOT-set-sdmmc2-boothph-pre-ram.patch \
 	"
 
