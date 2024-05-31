@@ -128,7 +128,7 @@ BBFILES ?= ""
 BBLAYERS ?= " \
 	/path/to/OE/poky/meta \
 	/path/to/OE/meta-mainline-common \
-	/path/to/OE/meta-custom-dk1-stm32-bsp \
+	/path/to/OE/meta-dk1-stm32-bsp \
 	"
 ```
 
